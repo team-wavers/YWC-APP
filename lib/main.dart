@@ -1,11 +1,13 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:ywc_app/default_layout/default_layout.dart';
 import 'package:ywc_app/screens/webview_screen.dart';
-import 'package:ywc_app/utils/get_current_position.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  unawaited(MobileAds.instance.initialize());
   runApp(const MyApp());
 }
 
