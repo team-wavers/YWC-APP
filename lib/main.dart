@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'YWC-APP',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3498DB)),
       ),
       home: Home(),
     );
@@ -34,7 +33,11 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultLayout(body: WebviewScreen());
+    return DefaultLayout(
+        body: SafeArea(
+          child: WebviewScreen()
+        )
+    );
   }
 }
 
