@@ -16,6 +16,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
+
+# 플레이스토어 버전보다 무조건 높게 해야 업로드가 됨.
 version: 1.0.0+1
 
 environment:
@@ -35,9 +37,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 
+  #기능 관련 라이브러리
   cupertino_icons: ^1.0.2
   webview_flutter: ^4.7.0
   geolocator: ^11.0.0
+
+  #배포 관련 or 배포 이후
+  change_app_package_name: ^1.1.0
+  flutter_native_splash: ^2.3.11
+  flutter_launcher_icons: ^0.13.1
   google_mobile_ads: ^5.0.0
 
 dev_dependencies:
@@ -58,7 +66,6 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
-    - assets/images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

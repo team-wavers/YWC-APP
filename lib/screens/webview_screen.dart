@@ -11,15 +11,6 @@ class WebviewScreen extends StatelessWidget {
     ..setUserAgent('webview')
     ..setNavigationDelegate(
       NavigationDelegate(
-        onProgress: (int progress) {
-          // Update loading bar. //추가 예정
-        },
-        onPageStarted: (String url) {}, //시작페이지
-        onWebResourceError: (WebResourceError error) {
-          //에러났을 때
-        },
-
-        //페이지 이동 허용
         onNavigationRequest: (NavigationRequest request) {
           if (request.url.startsWith('https://www.youtube.com/')) {
             return NavigationDecision.prevent;

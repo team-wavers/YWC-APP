@@ -11,15 +11,15 @@ class DefaultLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double appbarHeghit = AppBar().preferredSize.height;
+    //final double appbarHeghit = AppBar().preferredSize.height;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Image.asset(
-          'assets/images/wavers_logo.png',
-          height: appbarHeghit - 10,fit: BoxFit.fitHeight,),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   centerTitle: true,
+      //   title: Image.asset(
+      //     'assets/images/wavers_logo.png',
+      //     height: appbarHeghit - 10,fit: BoxFit.fitHeight,),
+      // ),
       body: body
     );
   }
