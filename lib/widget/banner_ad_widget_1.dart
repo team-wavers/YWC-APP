@@ -11,9 +11,11 @@ class BannerAdWidget1 extends StatefulWidget {
   ///
   final String adUnitId = Platform.isAndroid
   // Use this ad unit on Android...
-      ? 'ca-app-pub-3883023077396286~5620830400'
+      ? 'ca-app-pub-3883023077396286/4970093714'
+      // 테스트 광고 코드
+      //? 'ca-app-pub-3940256099942544/6300978111'
   // ... or this one on iOS.
-      : 'ca-app-pub-3883023077396286~5732526959';
+      : 'ca-app-pub-3883023077396286/8389798662';
 
   BannerAdWidget1({
     super.key,
@@ -30,16 +32,14 @@ class _BannerAdWidget1State extends State<BannerAdWidget1> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SizedBox(
-        width: widget.adSize.width.toDouble(),
-        height: widget.adSize.height.toDouble(),
-        child: _bannerAd == null
-        // Nothing to render yet.
-            ? const SizedBox()
-        // The actual ad.
-            : AdWidget(ad: _bannerAd!),
-      ),
+    return SizedBox(
+      width: widget.adSize.width.toDouble(),
+      height: _bannerAd == null ? 0 : widget.adSize.height.toDouble(),
+      child: _bannerAd == null
+      // Nothing to render yet.
+          ? const SizedBox()
+      // The actual ad.
+          : AdWidget(ad: _bannerAd!),
     );
   }
 
@@ -55,6 +55,8 @@ class _BannerAdWidget1State extends State<BannerAdWidget1> {
     super.dispose();
   }
 
+
+
   /// Loads a banner ad.
   void _loadAd() {
     final bannerAd = BannerAd(
@@ -65,17 +67,22 @@ class _BannerAdWidget1State extends State<BannerAdWidget1> {
         // Called when an ad is successfully received.
         onAdLoaded: (ad) {
           if (!mounted) {
-            ad.dispose();
+              ad.dispose();
             return;
           }
-          setState(() {
+          else {
+            setState(() {
             _bannerAd = ad as BannerAd;
-          });
+           });
+          }
         },
         // Called when an ad request failed.
         onAdFailedToLoad: (ad, error) {
           debugPrint('BannerAd failed to load: $error');
-          ad.dispose();
+          setState(() {
+            ad.dispose();
+          });
+          return;
         },
       ),
     );

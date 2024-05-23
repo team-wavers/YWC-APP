@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:ywc_app/default_layout/default_layout.dart';
 import 'package:ywc_app/screens/webview_screen.dart';
+import 'package:ywc_app/widget/banner_ad_widget_1.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'YWC-APP',
+      title: '문화복지카드 사용처 검색',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -34,7 +34,14 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultLayout(body: WebviewScreen());
+    return SafeArea(
+        child: Column(
+          children: [
+            BannerAdWidget1(),
+            Flexible(
+                child: WebviewScreen()),
+          ],
+        ));
   }
 }
 
