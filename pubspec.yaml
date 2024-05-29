@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # of the product and file versions while build-number is used as the build suffix.
 
 # 플레이스토어 버전보다 무조건 높게 해야 업로드가 됨.
-version: 1.0.0+1
+version: 1.0.0+3
 
 environment:
   sdk: '>=3.2.5 <4.0.0'
