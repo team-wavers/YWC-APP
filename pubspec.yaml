@@ -1,8 +1,8 @@
 name: ywc_app
-description: "전남청년 문화복지카드검색 서비스(App)"
+description: "전남 청년 문화복지카드 검색(App)"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' # Remo ve this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # of the product and file versions while build-number is used as the build suffix.
 
 # 플레이스토어 버전보다 무조건 높게 해야 업로드가 됨.
-version: 1.0.0+3
+version: 1.0.0
 
 environment:
   sdk: '>=3.2.5 <4.0.0'

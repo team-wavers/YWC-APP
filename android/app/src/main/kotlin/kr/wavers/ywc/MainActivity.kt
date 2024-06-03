@@ -1,4 +1,4 @@
-package com.ywc_app.release.demo
+package kr.wavers.ywc
 
 import io.flutter.embedding.android.FlutterActivity
 
