@@ -2,7 +2,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:ywc_app/screens/webview_screen.dart';
 
-void getCurrentPositon(message) async {
+void getCurrentPosition(message) async {
   WebViewController controller = WebviewScreen.controller;
   if(message == 'getLocation'){
     await Geolocator.requestPermission();

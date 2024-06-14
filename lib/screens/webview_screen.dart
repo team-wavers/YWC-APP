@@ -22,10 +22,10 @@ class WebviewScreen extends StatelessWidget {
     ..addJavaScriptChannel(
         'LocationChannel',
         onMessageReceived: (JavaScriptMessage message){
-         getCurrentPositon(message.message);
+         getCurrentPosition(message.message);
         }
     )
-    ..loadRequest(Uri.parse('https://ywc.dev.wavers.kr'));
+    ..loadRequest(Uri.parse('https://ywc.wavers.kr'));
 
   @override
   Widget build(BuildContext context) {
